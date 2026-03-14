@@ -40,5 +40,10 @@ public class UserRepoImp implements UserRepo
         }
         return null;
     }
+
+    @Override
+    public List<Usuario> obtenerTodos() {
+        return usuarios;
+    }
     
 }
