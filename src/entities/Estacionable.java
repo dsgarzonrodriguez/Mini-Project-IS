@@ -1,3 +1,4 @@
+package src.entities;
 public interface Estacionable 
 {
     void ingresar();

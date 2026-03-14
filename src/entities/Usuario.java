@@ -1,3 +1,4 @@
+package src.entities;
 public class Usuario
 {
     //contadorId se utiliza para generar un id único para cada usuario creado

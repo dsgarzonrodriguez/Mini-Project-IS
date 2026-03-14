@@ -1,3 +1,4 @@
+package src.entities;
 import java.time.LocalDateTime;
 
 public class Ticket
@@ -7,11 +8,13 @@ public class Ticket
     private LocalDateTime horaIngreso;
     private LocalDateTime horaSalida;
     private Vehiculo vehiculo;
+    private Usuario usuario;
 
-    public Ticket(LocalDateTime horaIngreso, Vehiculo vehiculo) {
+    public Ticket(LocalDateTime horaIngreso, Usuario usuario, Vehiculo vehiculo) {
         this.id = contadorTicketId++;
         this.horaIngreso = horaIngreso;
         this.vehiculo = vehiculo;
+        this.usuario = usuario;
     }
 
     public int getId() {
@@ -26,34 +29,36 @@ public class Ticket
         return horaSalida;
     }
 
-    public Vehiculo getVehiculo() {
+    public Vehiculo getVehiculo()
+    {
         return vehiculo;
     }
 
-    public void setId(int id) {
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setId(int id)
+    {
         this.id = id;
     }
 
-    public void setHoraIngreso(LocalDateTime horaIngreso) {
+    public void setHoraIngreso(LocalDateTime horaIngreso)
+    {
         this.horaIngreso = horaIngreso;
     }
 
-    public void setHoraSalida(LocalDateTime horaSalida) {
+    public void setHoraSalida(LocalDateTime horaSalida)
+    {
         this.horaSalida = horaSalida;
     }
     
-    public void setVehiculo(Vehiculo vehiculo) {
+    public void setVehiculo(Vehiculo vehiculo)
+    {
         this.vehiculo = vehiculo;
     }
 
-    public void calcularTiempo()
-    {
-        if (horaSalida != null) {
-            long horas = java.time.Duration.between(horaIngreso, horaSalida).toHours();
-            System.out.println("Tiempo estacionado: " + horas + " horas");
-        } else {
-            System.out.println("El vehículo aún no ha salido.");
-        }
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
-
 }
