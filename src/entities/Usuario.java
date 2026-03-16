@@ -1,3 +1,8 @@
+package src.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Usuario
 {
     //contadorId se utiliza para generar un id único para cada usuario creado
@@ -5,12 +10,13 @@ public class Usuario
     private int id;
     private String nombre;
     private String documento;
-    private Vehiculo vehiculo;
+    private List<Vehiculo> vehiculos;
 
     public Usuario(String nombre, String documento) {
         this.id = contadorUserId++;
         this.nombre = nombre;
         this.documento = documento;
+        this.vehiculos = new ArrayList<>();
     }
 
     public int getId() {
@@ -25,8 +31,8 @@ public class Usuario
         return documento;
     }
 
-    public Vehiculo getVehiculo() {
-        return vehiculo;
+    public List<Vehiculo> getVehiculos() {
+        return vehiculos;
     }
 
     public int setId(int id) {
@@ -41,7 +47,7 @@ public class Usuario
         return this.documento = documento;
     }
 
-     public void setVehiculo(Vehiculo vehiculo) {
-        this.vehiculo = vehiculo;
+    public List<Vehiculo> setVehiculos(List<Vehiculo> vehiculos) {
+        return this.vehiculos = vehiculos;
     }
 }

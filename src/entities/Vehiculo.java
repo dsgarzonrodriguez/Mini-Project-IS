@@ -1,10 +1,11 @@
-abstract class Vehiculo implements Estacionable
+package src.entities;
+public abstract class Vehiculo implements Estacionable
 {
     private static int contadorVehiculoId = 1;
     protected int id;
     protected String placa;
     protected Boolean estacionado;
-    abstract double tarifa();
+    public abstract double tarifa();
 
     public Vehiculo(String placa) {
         this.placa = placa;
